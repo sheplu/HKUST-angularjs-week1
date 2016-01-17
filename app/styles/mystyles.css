@@ -94,3 +94,8 @@ body {
   position: absolute;
   right: 0px;
 }
+
+.customer {
+  display: inline-block;
+  margin-right: 50px;
+}
