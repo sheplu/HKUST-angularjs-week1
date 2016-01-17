@@ -43,8 +43,8 @@
             </div>
             <div class="col-xs-9 col-xs-offset-1">
                   <h3 class="customer">Customer Comments</h3>
-                  Sort By: <input type="text" ng-model="filt">
-                  <blockquote ng-repeat="comment in dishCtrl.dish.comments">
+                  Sort By: <input type="text" ng-model='dishCtrl.filt'>
+                  <blockquote ng-repeat="comment in dishCtrl.dish.comments | orderBy:dishCtrl.filt">
                     <div class="media-body">
                         <h2 class="media-heading">{{comment.rating}} Stars</h2>
                         <p>{{comment.comment}}</p>
@@ -62,7 +62,7 @@
         var app = angular.module('confusionApp',[]);
 
         app.controller('dishDetailController', function() {
-
+            this.filt = '';
             var dish={
                           name:'Uthapizza',
                           image: 'images/uthapizza.png',
